@@ -13,7 +13,7 @@ exports.connect = (done) => {
     if (err) return done(err)
 
     // Set Database Name
-    let dbName = 'mongoClient'
+    let dbName = 'test'
 
     // Store Database to state.db variable so we can return that variable with get() method.
     state.db = client.db(dbName)
