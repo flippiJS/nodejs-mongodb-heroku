@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const db = require('../models/db');
 
 // Create user
 exports.create = (req, res) => {
@@ -15,14 +16,14 @@ exports.create = (req, res) => {
     };
 
     // Save user in the database
-    User.save(user)
+    db.getInstance().collection('users').save(user)
         .then(data => {
             res.send(data);
         })
         .catch(err => {
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while creating the user."
+                    err.message || "Some error occurred while creating the db.getInstance().collection('users')."
             });
         });
 };
@@ -32,10 +33,9 @@ exports.findAll = (req, res) => {
     const name = req.query.name;
     var condition = name ? { name: { $regex: new RegExp(name), $options: "i" } } : {};
 
-    User.find(condition)
-        .then(data => {
-            res.send(data);
-        })
+    db.getInstance().collection('users').find(condition).toArray().then(data => {
+        res.send(data);
+    })
         .catch(err => {
             res.status(500).send({
                 message:
@@ -48,7 +48,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
-    User.findById(id)
+    db.getInstance().collection('users').findById(id)
         .then(data => {
             if (!data)
                 res.status(404).send({ message: "Not found user with id " + id });
@@ -71,7 +71,7 @@ exports.update = (req, res) => {
 
     const id = req.params.id;
 
-    User.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    db.getInstance().collection('users').findByIdAndUpdate(id, req.body, { useFindAndModify: false })
         .then(data => {
             if (!data) {
                 res.status(404).send({
@@ -90,7 +90,7 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
     const id = req.params.id;
 
-    User.findByIdAndRemove(id, { useFindAndModify: false })
+    db.getInstance().collection('users').findByIdAndRemove(id, { useFindAndModify: false })
         .then(data => {
             if (!data) {
                 res.status(404).send({

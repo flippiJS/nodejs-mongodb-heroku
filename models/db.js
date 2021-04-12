@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient
-const { MONGO_URL } = require('../config/db.config')
+const { MONGO_URL, MONGO_DB_NAME } = require('../config/db.config')
 
 const state = {
   db: null,
@@ -13,17 +13,17 @@ exports.connect = (done) => {
     if (err) return done(err)
 
     // Set Database Name
-    let dbName = 'test'
+    let dbName = MONGO_DB_NAME;
 
     // Store Database to state.db variable so we can return that variable with get() method.
-    state.db = client.db(dbName)
+    state.db = client.db(dbName);
     done()
   })
 }
 
 // Return Database Obj
 exports.getInstance = () => {
-  return state.db
+  return state.db;
 }
 
 // Close the connection
