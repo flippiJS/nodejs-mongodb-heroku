@@ -105,7 +105,28 @@ MONGO_DB_NAME='test' (Nombre de DB creada en Atlas)
 
 ![mongodb-1](https://i.ibb.co/M9k0KTx/Screenshot-at-Apr-09-19-08-54.png)
 
+## Correr localmente
 
+- Acceder por linea de comandos a la carpeta del proyecto y luego ejecutamos:
+
+```sh
+cd C:\<ruta-del-repo-clonado>
+npm i
+npm start
+```
+
+- Abrir desde http://localhost:8080/
+
+## Archivo .env localmente
+
+Crear en la raiz del proyecto el archivo `.env` tomando de referencia `.env.example`
+
+Agregamos los siguientes datos Clave -> Valor:
+
+```sh
+MONGO_URL='mongodb+srv://127.0.0.1:27017/'(Url de connect de Atlas)
+MONGO_DB_NAME='test' (Nombre de DB creada en Atlas)
+```
 
 ## Ayuda
 Cualquier duda o consulta por el canal de slack
