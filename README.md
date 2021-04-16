@@ -86,17 +86,24 @@ Una vez creado, presionamos **Connect**
 
 ![mysql3](https://i.ibb.co/xDKR97w/Screenshot-at-Apr-16-19-24-03.png)
 
-Copiamos estos datos y nos vamos al dashboard del proyecto en Heroku, en la pestaña **Settings**, la opción **Config Vars**.
+Continuamos haciendo click en **Connect you application**
+
+![mysql3](https://i.ibb.co/G9j7x4T/Screenshot-at-Apr-16-19-24-17.png)
+
+Seleccionamos la versión de Node y copiamos la URL de conexión
+
+![mysql3](https://i.ibb.co/h7JN2X5/Screenshot-at-Apr-16-19-24-32.png)
+
+Con estos datos nos vamos al dashboard del proyecto en Heroku, en la pestaña **Settings**, la opción **Config Vars**.
 
 Agregamos los siguientes datos Clave -> Valor:
 
 ```sh
-MONGO_URL='mongodb+srv://127.0.0.1:27017/'
-MONGO_DB_NAME='test'
+MONGO_URL='mongodb+srv://127.0.0.1:27017/'(Url de connect de Atlas)
+MONGO_DB_NAME='test' (Nombre de DB creada en Atlas)
 ```
 
 ![mongodb-1](https://i.ibb.co/M9k0KTx/Screenshot-at-Apr-09-19-08-54.png)
-
 
 
 
