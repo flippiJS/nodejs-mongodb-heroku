@@ -48,7 +48,7 @@ Podemos verificar desde GitHub si el depliegue se hizo con exito.
 
 https://github.com/flippiJS/nodejs-mongodb-heroku/deployments
 
-![Heroku6](https://i.ibb.co/K95j3fp/heroku6.png)
+![Heroku6](https://i.ibb.co/KwK97BX/Screenshot-at-Apr-16-19-28-57.png)
 
 Desde el botón **View deployment** accedemos a la URL de la app desplegada.
 
