@@ -28,11 +28,11 @@ Heroku al iniciar sesión nos muestra su dashboard, aquí haremos clic en **New*
 
 En esta sección agregamos el nombre de la app, seleccionamos la región United States y luego clic en botón **Create app**
 
-![Heroku2](https://i.ibb.co/TwPJnrW/heroku2.png)
+![Heroku2](https://i.ibb.co/0BJx5gd/Screenshot-at-Apr-09-19-06-30.png)
 
 Ahora vamos a la sección **Deploy** y hacemos clic en la opción de GitHub, la cual nos mostrará nuestro usuario o tendremos que iniciar sesión con GitHub. Después   buscamos el nombre de nuestro repo y aparecerá abajo:
 
-![Heroku3](https://i.ibb.co/vZjZgD6/heroku3.png)
+![Heroku3](https://i.ibb.co/9yftS70/Screenshot-at-Apr-09-19-07-13.png)
 
 Seleccionamos el repo y hacemos clic en **Connect**
 
@@ -53,6 +53,52 @@ https://github.com/flippiJS/nodejs-mongodb-heroku/deployments
 Desde el botón **View deployment** accedemos a la URL de la app desplegada.
 
 https://nodejs-mongodb-heroku.herokuapp.com/
+
+## 4- Crear y configurar la base de datos MongoDB (MongoDB Atlas Online)
+
+Para esto vamos a crear una cuenta en MongoDB Atlas -> https://account.mongodb.com/account/register que nos permite acceder gratuitamente a un servidor MongoDB en la nube. 
+
+Completamos los datos y creamos la cuenta **Sign Up**:
+
+Validamos la cuenta desde el link enviado al correo.
+
+Iniciamos sesión, completamos los datos que nos pide el formulario.
+
+![mongo2](https://i.ibb.co/SKYRsf7/Screenshot-at-Apr-09-17-25-44.png)
+
+Seleccionamos el plan **FREE**
+
+![mongo3](https://i.ibb.co/MGk5S6Z/Screenshot-at-Apr-09-17-26-30.png)
+
+Elegimos un proveedor a elección y la región
+
+![mongo4](https://i.ibb.co/K2yJ3rs/Screenshot-at-Apr-09-17-26-47.png)
+
+Una vez creado, vamos a crear la DB
+
+![mysql3](https://i.ibb.co/4WZYCzh/Screenshot-at-Apr-09-17-31-38.png)
+
+Ahora configurar los datos de conexion a la base de datos, permitimos la conexion desde cualquier IP publica y completamos los valores
+
+Es **MUY IMPORTANTE** copiar esa informacion (usuario y clave).
+
+Una vez creado, presionamos **Connect**
+
+![mysql3](https://i.ibb.co/xDKR97w/Screenshot-at-Apr-16-19-24-03.png)
+
+Copiamos estos datos y nos vamos al dashboard del proyecto en Heroku, en la pestaña **Settings**, la opción **Config Vars**.
+
+Agregamos los siguientes datos Clave -> Valor:
+
+```sh
+MONGO_URL='mongodb+srv://127.0.0.1:27017/'
+MONGO_DB_NAME='test'
+```
+
+![mongodb-1](https://i.ibb.co/M9k0KTx/Screenshot-at-Apr-09-19-08-54.png)
+
+
+
 
 ## Ayuda
 Cualquier duda o consulta por el canal de slack
