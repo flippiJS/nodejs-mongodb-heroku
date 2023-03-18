@@ -1,3 +1,5 @@
+> **⚠️ Atención** Esta opción dejó de ser gratuita debido a cambios en la plataforma de Heroku. [Mas info](https://help.heroku.com/RSBRUH58/removal-of-heroku-free-product-plans-faq).
+
 Aplicación NodeJS + Express + MongoDB con despliegue automático en Heroku.
 ==============================
 
